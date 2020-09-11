@@ -2,16 +2,24 @@ import React from 'react';
 //import Log from "./content/Log In/LogIn";
 //import Register from "./content/Sign Up/singUp";
 import Main from "./content/Main/Main";
+import {BrowserRouter, Switch, Route, NavLink} from 'react-router-dom'
+import CurrentMusic from './content/CurrentMusic/CurrentMusic'
 
 
 function App() {
   return (
-    <div>
-      <Main/>
-      {/*<Log />*/}
-      {/*<Register />*/}
+    <BrowserRouter>
+      <div>
+        <NavLink to="/current">To current</NavLink>
+        <Main/>
+        {/*<Log />*/}
+        {/*<Register />*/}
 
-    </div>
+      </div>
+      <Switch>
+        <Route path="/current" component={CurrentMusic} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
