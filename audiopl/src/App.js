@@ -1,7 +1,7 @@
 import React from 'react';
-//import Log from "./ArtemWork/Log In/LogIn";
-//import Register from "./ArtemWork/Sign Up/singUp";
-import Main from "./ArtemWork/Main/Main";
+//import Log from "./content/Log In/LogIn";
+//import Register from "./content/Sign Up/singUp";
+import Main from "./content/Main/Main";
 
 
 function App() {
