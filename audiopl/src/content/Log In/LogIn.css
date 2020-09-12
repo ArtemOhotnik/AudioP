@@ -1,100 +1,87 @@
+* {
+    overflow: hidden;
+}
+
 .Log {
-    position: absolute;
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(180deg, #8A5BFE 0%, rgba(255, 255, 255, 0) 100%), #ED6097;
-
-
-
 }
 
 .blockLog {
-    position: absolute;
-    width: 40%;
-    height: 75%;
-    left: 30%;
-    top: 15%;
-
+    display: flex;
+    width: 500px;
+    height: 80vh;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
     background: rgba(52, 32, 74, 0.26);
     border-radius: 50px;
+    justify-content: center;
 
 }
 
 .LogIn {
-    position: absolute;
-    display: block;
-    margin-left: 40%;
-    margin-top: 7%;
-
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 56px;
-
     color: #FFFFFF;
+    justify-content: flex-end;
 }
 
 .p1 {
-    position: absolute;
-    margin-top: 20%;
-    margin-left: 40%;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 28px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #FFFFFF
+
 }
 
 .input1 {
-    position: absolute;
-    width: 200px;
-    height: 15px;
-    margin-top: 27%;
-    margin-left: 30%;
+    width: 220px;
+    height: 25px;
 
     background: #FFFFFF;
     border-radius: 38px;
+    border: none;
+    outline: none;
 }
 
 .p2 {
-    position: absolute;
-    margin-top: 35%;
-    margin-left: 39%;
-
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 28px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #FFFFFF
 }
+
 
 .input2 {
-    position: absolute;
-    width: 200px;
-    height: 15px;
-    margin-top: 42%;
-    margin-left: 30%;
+    width: 220px;
+    height: 25px;
 
     background: #FFFFFF;
-    border-radius: 38px;
+    border-radius: 57px;
+    border: none;
+    outline: none;
 }
 
-.buttonL {
-    position: absolute;
-    width: 150px;
-    height: 30px;
-    margin-top: 52%;
-    margin-left: 35%;
 
+.buttonL {
+    margin-top: 30px;
+    width: 110px;
+    height: 35px;
+    cursor: pointer;
+
+    border: none;
+    outline: none;
     background: rgba(40, 234, 36, 0.83);
     border-radius: 27px;
 }

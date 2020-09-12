@@ -3,15 +3,25 @@ import './LogIn.css'
 
 function Log() {
     return(
+
+
         <div className="Log">
+
+            <form action="">
+
             <div className="blockLog">
-                <p className="LogIn">Log In</p>
+                <h1 className="LogIn">Log In</h1>
                 <p className="p1">Your name</p>
                 <input className="input1"/>
                 <p className="p2">Your password</p>
                 <input className="input2"/>
                 <button className="buttonL">Log In</button>
             </div>
+
+            </form>
+
+
+
 
         </div>
     )

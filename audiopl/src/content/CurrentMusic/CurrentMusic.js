@@ -7,7 +7,7 @@ function CurrentMusic() {
         <div className="container">
             <div className="left-sidebar">
                 <div className="search">
-                    <img src="https://img.icons8.com/ios-filled/16/search.png" className="search-icon" />
+                    <img alt="#" src="https://img.icons8.com/ios-filled/16/search.png" className="search-icon" />
                     <input placeholder="Search" type="text"/>
                 </div>
                 {/* <h1 className="search-text">Search new songs!</h1> */}
