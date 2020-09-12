@@ -1,5 +1,6 @@
 import React from "react";
 import './Main.css'
+import {NavLink} from 'react-router-dom'
 
 
 function Main() {
@@ -11,8 +12,8 @@ function Main() {
                 <div className="logo">#</div>
 
                 <div className="buttonHeader">
-                    <button className="reg">SIGN UP</button>
-                    <button className="sign" >SIGN IN</button>
+                    <button className="reg"><NavLink style={{textDecoration: 'none'}} to="/signup">SIGN UP</NavLink></button>
+                    <button className="sign" ><NavLink style={{textDecoration: 'none', color: 'white'}} to="/signin">SIGN IN</NavLink></button>
                 </div>
             </header>
 

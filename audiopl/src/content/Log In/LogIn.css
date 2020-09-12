@@ -27,59 +27,40 @@
 .LogIn {
     color: #FFFFFF;
     justify-content: flex-end;
+    margin-bottom: 30px;
 }
 
-.p1 {
+.p1, .p2 {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 28px;
     text-align: center;
-
-    color: #FFFFFF
+    color: #FFFFFF;
+    margin-bottom: 10px;
 
 }
-
-.input1 {
+.input1{
+    margin-bottom: 40px;
+}
+.input2{
+    margin-bottom: 35px;
+}
+.input1, .input2 {
     width: 220px;
     height: 25px;
-
     background: #FFFFFF;
     border-radius: 38px;
     border: none;
     outline: none;
+    padding-left: 10px;
 }
-
-.p2 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-
-    color: #FFFFFF
-}
-
-
-.input2 {
-    width: 220px;
-    height: 25px;
-
-    background: #FFFFFF;
-    border-radius: 57px;
-    border: none;
-    outline: none;
-}
-
 
 .buttonL {
-    margin-top: 30px;
     width: 110px;
     height: 35px;
     cursor: pointer;
-
     border: none;
     outline: none;
     background: rgba(40, 234, 36, 0.83);

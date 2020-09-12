@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .main {
     display: flex;
     width: 100%;
@@ -7,6 +12,7 @@
     align-items: center;
     background: linear-gradient(180deg, #8A5BFE 0%, rgba(255, 255, 255, 0) 100%), #ED6097;
 }
+
 
 
 
@@ -51,7 +57,7 @@ header{
     justify-content: center;
     outline: none;
     cursor: pointer;
-
+    align-items: center;
 }
 
 

@@ -4,21 +4,20 @@ import React from 'react';
 import Main from "./content/Main/Main";
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import CurrentMusic from './content/CurrentMusic/CurrentMusic'
+import SignUp from './content/Sign Up/SignUp'
+import LogIn from './content/Log In/LogIn'
 
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        {/* <NavLink to="/current">To current</NavLink> */}
-        {/* <Main/> */}
-        {/*<Log />*/}
-        {/*<Register />*/}
-
-      </div>
+      <>
+        <Main/>
+      </>
       <Switch>
         <Route path="/current" component={CurrentMusic} />
-        <Route path="/main" component={Main}/>
+        <Route path="/signup" component={SignUp} />
+        <Route path="/signin"  component={LogIn} />
       </Switch>
     </BrowserRouter>
   );
