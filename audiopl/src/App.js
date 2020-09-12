@@ -10,8 +10,8 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <NavLink to="/current">To current</NavLink>
-        <Main/>
+        {/* <NavLink to="/current">To current</NavLink> */}
+        {/* <Main/> */}
         {/*<Log />*/}
         {/*<Register />*/}
 

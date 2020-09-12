@@ -8,6 +8,40 @@
     height: 100vh;
     overflow: none;
     display: flex;
-    flex-direction: column;
     background: linear-gradient(180deg, #8A5BFE 0%, rgba(255, 255, 255, 0) 100%), #ED6097;
+}
+.left-sidebar{
+    width: 250px;
+    height: 100vh;
+    background: #34204A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.search {
+    width: 85%;
+    height: 35px;
+    background: white;
+    border-radius: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+}
+.search-icon{
+    filter: invert(1) brightness(0);
+    margin-right: 5px;
+}
+input{
+    background:transparent;
+    outline: none;
+    border: none;
+    padding-top: 1px;
+}
+.search-text{
+    color: #616A6B;
+    text-align: center;
+    font-size: 26px;
 }
