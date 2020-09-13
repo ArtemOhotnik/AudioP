@@ -1,14 +1,14 @@
 import React from 'react'
 
-const terms = () => {
+const Terms = () => {
     return(
-        <h1>
+        <>
             Hello
-        </h1>
+        </>
     )
 }
 
 
 
 
-export default terms
+export default Terms

@@ -16,50 +16,51 @@ function Main() {
                     <button className="sign" ><NavLink style={{textDecoration: 'none', color: 'white'}} to="/signin">SIGN IN</NavLink></button>
                 </div>
             </header>
+            <div style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+                <h1 style={{marginBottom: '10px'}}>We recommend to listen</h1>
 
-            <h1>We recommend to listen</h1>
+                <div className="Box">
 
-            <div className="Box">
+                    <div className="Box1">
+                    <p className="Song1">Full song name</p>
 
-                <div className="Box1">
-                <p className="Song1">Full song name</p>
+                        <div>
+                    <p className="Time1">0:00</p>
+                    <img alt={"#"} src="https://img.icons8.com/material-outlined/1x/circled-play.png" className="pause1"/>
+                    </div>
 
-                    <div>
-                <p className="Time1">0:00</p>
-                <img alt={"#"} src="https://img.icons8.com/material-sharp/24/000000/pause.png" className="pause1"/>
                 </div>
 
-            </div>
+                    <div className="Box1">
+                    <p className="Song2">Full song name</p>
 
-                <div className="Box1">
-                <p className="Song2">Full song name</p>
+                        <div>
+                    <p className="Time2">0:00</p>
+                    <img alt={"#"} src="https://img.icons8.com/material-outlined/1x/circled-play.png" className="pause2"/>
+                    </div>
 
-                    <div>
-                <p className="Time2">0:00</p>
-                <img alt={"#"} src="https://img.icons8.com/material-sharp/24/000000/pause.png" className="pause2"/>
                 </div>
 
-            </div>
+                    <div className="Box1">
+                    <p className="Song3">Full song name</p>
 
-                <div className="Box1">
-                <p className="Song3">Full song name</p>
+                        <div>
+                    <p className="Time3">0:00</p>
+                    <img alt={"#"} src="https://img.icons8.com/material-outlined/1x/circled-play.png" className="pause3"/>
+                    </div>
 
-                    <div>
-                <p className="Time3">0:00</p>
-                <img alt={"#"} src="https://img.icons8.com/material-sharp/24/000000/pause.png" className="pause3"/>
                 </div>
-
-            </div>
 
 
                 <div className="Box1">
-                <p className="Song4">Full song name</p>
+                    <p className="Song4">Full song name</p>
 
                     <div>
-                <p className="Time4">0:00</p>
-                <img alt={"#"} src="https://img.icons8.com/material-sharp/24/000000/pause.png" className="pause4"/>
-                </div>
+                    <p className="Time4">0:00</p>
+                    <img alt={"#"} src="https://img.icons8.com/material-outlined/1x/circled-play.png" className="pause4"/>
+                    </div>
 
+                </div>
             </div>
 
             </div>

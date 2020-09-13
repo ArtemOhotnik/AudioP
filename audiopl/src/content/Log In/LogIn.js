@@ -7,10 +7,10 @@ function Log() {
 
         <div className="Log">
 
-            <form action="">
+            <form>
 
             <div className="blockLog">
-                <h1 className="LogIn">Log In</h1>
+                <h1 className="LogIn">Sign In</h1>
                 <p className="p1">Your name</p>
                 <input className="input1"/>
                 <p className="p2">Your password</p>

@@ -105,7 +105,7 @@ function CurrentMusic() {
                 </div>
                 <div className="sound-footer">
                     <div className="sound">
-                        <img src="https://img.icons8.com/ios-filled/0.4x/room-sound.png" alt=""/>
+                        <img src="https://img.icons8.com/ios-filled/0.4x/room-sound.png" className="sound-" alt=""/>
                         <input className="slider-sound" type="range"/>
                     </div>
                 </div>

@@ -1,23 +1,32 @@
 import React from "react";
+import { NavLink, Route, Switch } from "react-router-dom";
 import './SingUp.css'
+import Terms from '../Terms/Terms'
 
 function Register() {
     return(
-        <div className="Log">
-            <div className="blockLog">
-                <h1 className="LogIn">Sing Up</h1>
-                <p className="p1">Your name</p>
-                <input className="input1"/>
-                <p className="p2">Password</p>
-                <input className="input2"/>
-                <p className="p3">Password repeat</p>
-                <input className="input3"/>
-
-                <p className="accept"><input type="checkbox" name="a"/> i accept the terms of service</p>
-
-               <button className="buttonS">Sing Up</button>
+        <div className="log">
+            <div className="main-sign-block">
+                <form>
+                    <h1>Sign Up</h1>
+                    <div className="your-name">
+                        <span>Your name</span>
+                        <input type="text" placeholder="Your name"/>
+                    </div>
+                    <div className="your-pass">
+                        <span>Your password</span>
+                        <input type="text" placeholder="Your password"/>
+                    </div>
+                    <div className="pass-repeat">
+                        <span>Repeat password</span>
+                        <input type="text" placeholder="Repeat password"/>
+                    </div>
+                    <button type="submit">Sing Up</button>
+                </form>
             </div>
-
+        <Switch>
+            <Route path="/terms" component={Terms} />
+        </Switch>
         </div>
     )
 }
