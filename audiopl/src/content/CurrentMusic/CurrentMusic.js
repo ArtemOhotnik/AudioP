@@ -22,7 +22,8 @@ class CurrentMusic extends React.Component{
         super(props)
 
         this.state = {
-            paused: true
+            paused: true,
+            paus: 'https://img.icons8.com/material-outlined/2.5x/circled-play.png',
         }
     }
 
@@ -69,16 +70,18 @@ class CurrentMusic extends React.Component{
                                 if(this.state.paused === true){
                                     song.play()
                                     this.setState({
-                                        paused: false
+                                        paused: false,
+                                        paus: 'https://img.icons8.com/ios/50/000000/pause-squared.png'
                                     })
                                 }
                                 else if(this.state.paused === false){
                                     song.pause()
                                     this.setState({
-                                        paused: true
+                                        paused: true,
+                                        paus: 'https://img.icons8.com/material-outlined/2.5x/circled-play.png'
                                     })
                                 }
-                            }} style={{ cursor: 'pointer' }} src="https://img.icons8.com/material-outlined/2.5x/circled-play.png" alt=","/>
+                            }} style={{ cursor: 'pointer' }} src={this.state.paus} alt=","/>
                             <button>NEXT</button>
     
                         </div>
