@@ -30,7 +30,11 @@ class Main extends React.Component{
                                 <p>{song.name}</p>
                                     <div>
                                         <p className="Time">{song.duration}</p>
-                                        <a href="/current"><img style={{marginTop: '5px'}} onClick={() => localStorage.setItem('index', parseInt(index) + 1)} alt={"#"} src="https://img.icons8.com/material-outlined/1x/circled-play.png" className="pause4"/></a>
+                                        <a
+                                            href="/current"><img style={{marginTop: '5px'}} onClick={() => localStorage.setItem('index', parseInt(index) + 1)}
+                                             alt={"#"} src="https://img.icons8.com/material-outlined/1x/circled-play.png"
+                                              className="pause4"/>
+                                        </a>
                                     </div>
                             </div>
                         )

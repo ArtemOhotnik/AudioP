@@ -3,9 +3,9 @@ import Main from "./content/Main/Main";
 import { Switch, Route} from 'react-router-dom'
 import CurrentMusic from './content/CurrentMusic/CurrentMusic'
 import SignUp from './content/Sign Up/SignUp'
+import Favorite from "./content/Favorit/Like";
 import LogIn from './content/Log In/LogIn'
 import UploadMusic from './content/UploadMusic/UploadMusic';
-
 
 class App extends React.Component{
     state = { // State
@@ -27,11 +27,15 @@ class App extends React.Component{
           <Main songinfo={this.state.songs}/>
         </Route>
         <Route path="/current" >
-          <CurrentMusic songinfo={this.state.songs} songkeys={this.state.songSrcKeys}/>
+          <CurrentMusic
+              songinfo={this.state.songs}
+              songkeys={this.state.songSrcKeys}
+          />
         </Route>
         <Route path="/signup" component={SignUp} />
         <Route path="/signin"  component={LogIn} />
         <Route path="/upload" component={UploadMusic} />
+        <Route  path="/favorit" component={Favorite} />
       </Switch>
     </>
   )
