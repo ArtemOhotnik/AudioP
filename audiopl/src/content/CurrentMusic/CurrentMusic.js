@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './CurrentMusic.css'
 import Musik from "../Musik/Musik"
 import aone from '../StaticMusic/1.mp3'
@@ -17,7 +17,6 @@ import axios from 'axios'
 
 let index = localStorage.getItem('index')
 const allAudios = [aone, atwo, athree, afour, afive,asix, aseven];
-
 
 const source = allAudios[index - 1]
 const song = new Audio(source)
@@ -40,6 +39,7 @@ class CurrentMusic extends React.Component{
                 {name: 'ROXANNE (Arizona Zervas)', duration: '2:44'},
             ],
             song: [],
+            localStor: [],
             paused: true,
             likeChen: false,
             likeIndex: "",
@@ -55,12 +55,12 @@ class CurrentMusic extends React.Component{
 
     async componentDidMount() {
         const axiosGet = await axios.get("https://audiopl-5219a.firebaseio.com/Like.json")
-        Object.values(axiosGet.data).forEach(item => {
-            localStorage.setItem(`SongName${index}`, item)
-            console.log(localStorage.getItem(`SongName${index}`))
+        //Object.values(axiosGet.data).forEach(item => {
+            //localStorage.setItem(`SongName${index}`, item)
+            //console.log(localStorage.getItem(`SongName${index}`))
 
+        //})
 
-        })
 
     }
 
@@ -97,34 +97,32 @@ class CurrentMusic extends React.Component{
     }
     }
 
+
     LikeHandler = async event => {
-        const axiosGet = await axios.get("https://audiopl-5219a.firebaseio.com/Like.json")
         const NameSong = this.props.songinfo[index - 1].name
         const jsonLikeIndex = JSON.stringify(NameSong).replace('""', ' ').trim();
-        if(this.state.likeChen === true){
-            this.setState({
-                likeChen: false,
-                like: love2
-            })
-
-        }
-        else if(this.state.likeChen === false){
+        const test = await axios.post("https://audiopl-5219a.firebaseio.com/Like.json", jsonLikeIndex)
+     if(this.state.likeChen === false){
             this.setState({
                 likeChen: true,
                 like: love1
             })
-            await axios.post("https://audiopl-5219a.firebaseio.com/Like.json", jsonLikeIndex)
-            const axiosGet = await axios.get("https://audiopl-5219a.firebaseio.com/Like.json")
-            Object.values(axiosGet.data).forEach(item => {
-                localStorage.setItem(`SongName${index}`, item)
-                console.log(localStorage.getItem(`SongName${index}`))
+         await axios.post("https://audiopl-5219a.firebaseio.com/Like.json", jsonLikeIndex)
+         console.log(test.data)
+         const axiosGet = await axios.get("https://audiopl-5219a.firebaseio.com/Like.json")
+         alert("Після вподобання пісні перезапустіть сторінку")
+         Object.values(axiosGet.data).forEach(item => {
+             localStorage.setItem(`SongName${index}`, item)
+             console.log(localStorage.getItem(`SongName${index}`))
+         })
+     }
 
-
-
-
-
-
+     else if(this.state.likeChen === true){
+            this.setState({
+                likeChen: false,
+                like: love2
             })
+         localStorage.removeItem(`SongName${index}`);
 
         }
     }
@@ -189,11 +187,64 @@ class CurrentMusic extends React.Component{
                     <div className="yourPlaylist">
                     <h1>Your playlist</h1>
 
-                       <Musik
-                            name = {
-                                localStorage.getItem("SongName")
-                        }
-                       />
+
+                        { localStorage.getItem(`SongName1`) ?<Musik
+                            name={
+                                localStorage.getItem(`SongName1`) ? localStorage.getItem(`SongName1`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName1`)
+                            }
+                        /> : null}
+                        {localStorage.getItem(`SongName2`) ? <Musik
+                            name={
+                                localStorage.getItem(`SongName2`) ? localStorage.getItem(`SongName2`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName2`)
+                            }
+                        /> : null}
+                        {localStorage.getItem(`SongName3`) ? <Musik
+                            name={
+                                localStorage.getItem(`SongName3`) ? localStorage.getItem(`SongName3`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName3`)
+                            }
+                        />: null}
+                        {localStorage.getItem(`SongName4`) ? <Musik
+                            name={
+                                localStorage.getItem(`SongName4`) ? localStorage.getItem(`SongName4`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName4`)
+                            }
+                        /> : null}
+                        {localStorage.getItem(`SongName5`) ? <Musik
+                            name={
+                                localStorage.getItem(`SongName5`) ? localStorage.getItem(`SongName5`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName5`)
+                            }
+                        /> : null}
+                        {localStorage.getItem(`SongName6`) ? <Musik
+                            name={
+                                localStorage.getItem(`SongName6`) ? localStorage.getItem(`SongName6`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName6`)
+                            }
+                        /> : null}
+                        {localStorage.getItem(`SongName7`) ?<Musik
+                            name={
+                                localStorage.getItem(`SongName7`) ? localStorage.getItem(`SongName7`) : null
+                            }
+                            local={
+                                localStorage.getItem(`SongName7`)
+                            }
+                        /> : null}
+
 
 
 
@@ -203,7 +254,7 @@ class CurrentMusic extends React.Component{
                     <div className="sound-footer">
                         <div className="sound">
                             <img src="https://img.icons8.com/ios-filled/0.4x/room-sound.png" className="sound-" alt=","/>
-                            <input onChange={e => console.log(e.target.value)} className="slider-sound" min="0" max="100" type="range"/>
+                            <input className="slider-sound" min="0" max="100" type="range"/>
                         </div>
                     </div>
                 </div>

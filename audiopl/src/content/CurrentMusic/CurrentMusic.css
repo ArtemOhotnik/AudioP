@@ -162,6 +162,7 @@ input{
     width: 55%;
     height: 55vh;
     border: 1px solid white;
+    overflow: scroll;
 }
 .yourRow{
     width: 100%;
