@@ -1,7 +1,17 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useRef } from 'react'
 import './UploadMusic.css'
 
 function UploadMusic() {
+
+    async function getFileName(event) {
+        const choosenFile = event.target.files[0].name
+        localStorage.setItem('UploadSong', choosenFile)
+        await axios.post('https://audiopl-5219a.firebaseio.com/upload.json', JSON.stringify(choosenFile))
+        .then(res => console.log('succes'))
+        .catch(err => console.log(err))
+    }
+
     return (
         <div className="container">
             <form className="main-block">
@@ -14,10 +24,7 @@ function UploadMusic() {
                     <span>Your name</span>
                     <input placeholder="Song name" type="text"/>
                 </div>
-                <div className="select-song">
-                    <button>Select</button>
-                    <span>mp3</span>
-                </div>
+                <input onChange={getFileName} type="file" accept=".mp3, .wav"/>
                 <button className="add-button">Add</button>
             </form>
         </div>

@@ -14,7 +14,7 @@
 .blockLog {
     display: flex;
     width: 500px;
-    height: 80vh;
+    height: 600px;
     align-items: center;
     flex-direction: column;
     margin-bottom: 10px;
@@ -45,11 +45,15 @@
     margin-bottom: 40px;
 }
 .input2{
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+}
+.blockLog > span{
+    margin-bottom: 20px;
+    color: white;
 }
 .input1, .input2 {
-    width: 220px;
-    height: 25px;
+    width: 260px;
+    height: 40px;
     background: #FFFFFF;
     border-radius: 38px;
     border: none;
@@ -65,4 +69,5 @@
     outline: none;
     background: rgba(40, 234, 36, 0.83);
     border-radius: 27px;
+    color: white;
 }

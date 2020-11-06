@@ -9,9 +9,13 @@
     align-items: center;
     background: linear-gradient(180deg, #8A5BFE 0%, rgba(255, 255, 255, 0) 100%), #ED6097;
 }
+h1{
+    margin-bottom: 10px;
+    font-size: 36px;
+}
 .main-sign-block{
     width: 500px;
-    height: 80vh;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content:center;
 }
 .main-sign-block > form > div{
     height: 100px;
@@ -48,4 +52,7 @@ form > button{
     color: white;
     cursor: pointer;
     font-size: 16px;
+}
+.bottomSpan {
+    margin-bottom: 15px;
 }

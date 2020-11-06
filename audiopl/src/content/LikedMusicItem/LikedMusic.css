@@ -1,0 +1,16 @@
+.row{
+    width: 90%;
+    height: 70px;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+span {
+    color: white;
+}
+
+img{
+    cursor: pointer;
+}
