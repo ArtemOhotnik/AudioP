@@ -1,8 +1,12 @@
 import axios from 'axios'
 import React, { useRef } from 'react'
 import './UploadMusic.css'
+import pous from "../../4.png";
+import play from "../../3.png";
 
 function UploadMusic() {
+
+
 
     async function getFileName(event) {
         const choosenFile = event.target.files[0].name
@@ -11,6 +15,8 @@ function UploadMusic() {
         .then(res => console.log('succes'))
         .catch(err => console.log(err))
     }
+
+
 
     return (
         <div className="container">
@@ -25,10 +31,11 @@ function UploadMusic() {
                     <input placeholder="Song name" type="text"/>
                 </div>
                 <input onChange={getFileName} type="file" accept=".mp3, .wav"/>
-                <button className="add-button">Add</button>
+                <button onClick={event => alert("Пісня додана")} className="add-button">Add</button>
             </form>
         </div>
     )
 }
+
 
 export default UploadMusic

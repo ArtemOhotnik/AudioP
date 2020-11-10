@@ -51,19 +51,14 @@ class CurrentMusic extends React.Component{
         }
     }
 
-    testVolume = () => {
-        song.volume = 0
-    }
-
 
     async componentDidMount() {
         const axiosGet = await axios.get("https://audiopl-5219a.firebaseio.com/Like.json")
-        //Object.values(axiosGet.data).forEach(item => {
-            //localStorage.setItem(`SongName${index}`, item)
-            //console.log(localStorage.getItem(`SongName${index}`))
-
-        //})
-
+        const axiosGetUlpoad = await axios.get("https://audiopl-5219a.firebaseio.com/upload.json")
+        Object.values(axiosGetUlpoad.data).forEach((item, index) => {
+            localStorage.setItem(`upload${index}`, item)
+            console.log(localStorage.getItem(`upload${index}`))
+        })
 
     }
 
@@ -80,6 +75,20 @@ class CurrentMusic extends React.Component{
 
 
     }
+    loadSongUpl = window.onload = async event => {
+        const axiosGetUlpoad = await axios.get("https://audiopl-5219a.firebaseio.com/upload.json")
+        const DataUp = axiosGetUlpoad.data
+        const FilterArr = []
+        for(var i in DataUp){
+            FilterArr.push(
+                DataUp[i]
+            )
+        }
+
+
+
+    }
+
     
 
 
@@ -101,11 +110,9 @@ class CurrentMusic extends React.Component{
     }
     }
 
-    // nextPlay = () => {
-    //     source = allAudios[index]
-    //     console.log(source);
-    //     new Audio(source).play()
-    // }
+    UploadHandler = async event => {
+
+        }
 
 
     LikeHandler = async event => {
@@ -187,12 +194,12 @@ class CurrentMusic extends React.Component{
                 <div className="pauseAndPlay">
                     
                     <button onClick={this.testVolume}>PREVIOUS</button>
-                    <img onClick={this.PauseHandler} style={{ cursor: 'pointer' }} src={this.state.paus} alt=","/>
+                    <img onClick={this.PauseHandler} onClick={this.UploadHandler} style={{ cursor: 'pointer' }} src={this.state.paus} alt=","/>
                     <button>NEXT</button>
 
                 </div>
 
-            </div>
+           </div>
             <div className="yourPlaylist">
             <h1>Your playlist</h1>
 
@@ -220,7 +227,7 @@ class CurrentMusic extends React.Component{
                     local={
                         localStorage.getItem(`SongName3`)
                     }
-                />: null}
+             />: null}
                 {localStorage.getItem(`SongName4`) ? <Musik
                     name={
                         localStorage.getItem(`SongName4`) ? localStorage.getItem(`SongName4`) : null
@@ -248,19 +255,27 @@ class CurrentMusic extends React.Component{
                 {localStorage.getItem(`SongName7`) ?<Musik
                     name={
                         localStorage.getItem(`SongName7`) ? localStorage.getItem(`SongName7`) : null
-                    }
+                   }
                     local={
                         localStorage.getItem(`SongName7`)
                     }
                 /> : null}
+                {localStorage.getItem(`upload1`) ?<Musik
+                    name={
+                        localStorage.getItem(`upload1`) ? localStorage.getItem(`upload1`) : null
+                    }
+                    local={
+                        localStorage.getItem(`upload1`)
+                    }
+                /> : null}
 
-
-
+                <div className="likedSongWrapper">
+                </div>
 
 
 
             </div>
-            <div className="sound-footer">
+         <div className="sound-footer">
                 <div className="sound">
                     <img src="https://img.icons8.com/ios-filled/0.4x/room-sound.png" className="sound-" alt=","/>
                     <input onChange={event => song.volume = event.target.value / 100} className="slider-sound" min="0" max="100" type="range"/>
@@ -268,7 +283,12 @@ class CurrentMusic extends React.Component{
             </div>
         </div>
     </div>
+
+
+
           )
         }
     }
 export default CurrentMusic
+
+
