@@ -22,6 +22,8 @@ const allAudios = [aone, atwo, athree, afour, afive,asix, aseven];
 let source = allAudios[index - 1]
 let song = new Audio(source)
 
+const testUploadArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+
 
 class CurrentMusic extends React.Component{
     constructor(props){
@@ -260,14 +262,16 @@ class CurrentMusic extends React.Component{
                         localStorage.getItem(`SongName7`)
                     }
                 /> : null}
-                {localStorage.getItem(`upload1`) ?<Musik
-                    name={
-                        localStorage.getItem(`upload1`) ? localStorage.getItem(`upload1`) : null
+                {testUploadArray.map((item, index) => (
+                    localStorage.getItem(`upload${index}`) ? <Musik
+                        name={
+                            localStorage.getItem(`upload${index}`) ? localStorage.getItem(`upload${index}`) : null
                     }
-                    local={
-                        localStorage.getItem(`upload1`)
-                    }
-                /> : null}
+                        local={
+                            localStorage.getItem(`upload${index}`)
+                        }
+                    /> : null
+                ))}
 
                 <div className="likedSongWrapper">
                 </div>
